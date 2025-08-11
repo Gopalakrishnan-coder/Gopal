@@ -1,0 +1,22 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1044 {
+	public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        int start = sc.nextInt();
+		        int end = sc.nextInt();
+
+		        for (int i = start; i <= end; i++) {
+		            boolean isPrime = true;
+		            if (i < 2) isPrime = false;
+		            if (i == 2) isPrime = true;
+		            if (i % 2 == 0 && i != 2) isPrime = false;
+		            for (int j = 3; j * j <= i && isPrime; j += 2) {
+		                if (i % j == 0) isPrime = false;
+		            }
+		            if (isPrime) System.out.print(i + " ");
+		        }
+		    }
+		}
+
+		
