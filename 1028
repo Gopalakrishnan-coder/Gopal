@@ -1,0 +1,30 @@
+package Day5;
+import java.util.Scanner;
+public class Day51028 {
+	public static void main(String[] args) {
+		
+		        Scanner sc = new Scanner(System.in);
+
+		        int x = sc.nextInt();
+		        int y = sc.nextInt();
+		        Float s = sc.nextFloat();
+		        Float  r = sc.nextFloat();
+		        Float l = sc.nextFloat();
+
+		        Float soloCost = x * s;
+		        Float roundCost = y * r;
+		        Float totalCost = soloCost + roundCost;
+
+		        if (s > r && 2 * s < r) {
+		            System.out.println("Invalid Input");
+		        } else if (totalCost > l) {
+		            System.out.println("Monthly Pass");
+		        } else {
+		            System.out.println("Solo Trail + Roundabout Ride");
+		        }
+
+		    }
+		
+	}
+
+
