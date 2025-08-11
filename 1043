@@ -1,0 +1,38 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1043 {
+	public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        int nails = sc.nextInt();
+		        String middle = sc.next();
+
+		        int maxPricePerNail = 0;
+		        int bestFirst = 0;
+		        int bestLast = 0;
+
+		        for (int first = 0; first <= 9; first++) {
+		            String firstStr = String.valueOf(first);
+		            if (middle.contains(firstStr)) continue;
+
+		            for (int last = 0; last <= 9; last++) {
+		                String lastStr = String.valueOf(last);
+		                if (middle.contains(lastStr) || first == last) continue;
+
+		                String fullPriceStr = firstStr + middle + lastStr;
+		                int fullPrice = Integer.parseInt(fullPriceStr);
+		                int pricePerNail = fullPrice / nails;
+
+		                if (pricePerNail > maxPricePerNail) {
+		                    maxPricePerNail = pricePerNail;
+		                    bestFirst = first;
+		                    bestLast = last;
+		                }
+		            }
+		        }
+
+		        System.out.println(bestFirst + " " + bestLast + " " + maxPricePerNail);
+		    }
+		
+	}
+
+
