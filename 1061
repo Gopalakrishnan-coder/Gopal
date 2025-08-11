@@ -1,0 +1,33 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1061 {
+	public static void main(String[] args) {
+		        Scanner scanner = new Scanner(System.in);
+		        int n = scanner.nextInt();
+		        int[] harmony = new int[n];
+		        int[] melody = new int[n];
+		        boolean match = true;
+
+		        for (int i = 0; i < n; i++) {
+		            harmony[i] = scanner.nextInt();
+		        }
+		        for (int i = 0; i < n; i++) {
+		            melody[i] = scanner.nextInt();
+		        }
+
+		        for (int i = 0; i < n; i++) {
+		            if (harmony[i] != melody[i]) {
+		                match = false;
+		                break;
+		            }
+		        }
+
+		        if (match) {
+		            System.out.println("Match Found!");
+		        } else {
+		            System.out.println("No Match Found!");
+		        }
+		    }
+		
+	}
+
