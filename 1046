@@ -1,0 +1,21 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1046 {
+	public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        int N = sc.nextInt();
+
+		        int a = 0;
+		        int b = 1;
+
+		        for (int i = 0; i < N; i++) {
+		            System.out.print(a + " ");
+		            int next = a + b;
+		            a = b;
+		            b = next;
+		        }
+		    }
+		
+	}
+
+
