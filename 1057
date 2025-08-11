@@ -1,0 +1,33 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1057 {
+	public static void main(String[] args) {
+		        Scanner scanner = new Scanner(System.in);
+		        int n = scanner.nextInt();
+		        int[] artifacts = new int[n];
+		        boolean found = false;
+
+		        for (int i = 0; i < n; i++) {
+		            artifacts[i] = scanner.nextInt();
+		        }
+
+		        int elusive = scanner.nextInt();
+
+		        for (int i = 0; i < n; i++) {
+		            if (artifacts[i] == elusive) {
+		                found = true;
+		                break;
+		            }
+		        }
+
+		        if (found) {
+		            System.out.println("Elusive Artifact Found!");
+		        } else {
+		            System.out.println("Elusive Artifact Not Found!");
+		        }
+		    }
+		
+
+	}
+
+
