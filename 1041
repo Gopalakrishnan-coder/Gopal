@@ -1,0 +1,43 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1041 {
+		    public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        int totalDigits = sc.nextInt();
+
+		        int digitsUsed = 0;
+		        int page = 0;
+		        int length = 1;
+		        int start = 1;
+		        boolean found = false;
+
+		        while (digitsUsed < totalDigits && !found) {
+		            int end = (int)Math.pow(10, length) - 1;
+		            int count = end - start + 1;
+
+		            if (digitsUsed + count * length >= totalDigits) {
+		                int remaining = totalDigits - digitsUsed;
+		                if (remaining % length == 0) {
+		                    page += remaining / length;
+		                    System.out.println(page);
+		                } else {
+		                    System.out.println("Impossible!");
+		                }
+		                found = true;
+		            } else {
+		                digitsUsed += count * length;
+		                page += count;
+		                start = end + 1;
+		                length++;
+		            }
+		        }
+
+		        if (!found) {
+		            System.out.println("Impossible!");
+		        }
+		    }
+		
+
+	}
+
+
