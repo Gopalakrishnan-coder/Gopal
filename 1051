@@ -1,0 +1,43 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1051 {
+	public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        int n = sc.nextInt();
+		        int count = 0;
+		        int num = 2;
+
+		        System.out.println("First " + n + " palindromic prime numbers:");
+
+		        while (count < n) {
+		            boolean prime = true;
+		            if (num < 2) prime = false;
+		            if (num == 2) prime = true;
+		            if (num % 2 == 0 && num != 2) prime = false;
+		            for (int i = 3; i * i <= num && prime; i += 2) {
+		                if (num % i == 0) prime = false;
+		            }
+
+		            boolean palindrome = true;
+		            String s = String.valueOf(num);
+		            int i = 0;
+		            int j = s.length() - 1;
+		            while (i < j && palindrome) {
+		                if (s.charAt(i) != s.charAt(j)) palindrome = false;
+		                i++;
+		                j--;
+		            }
+
+		            if (prime && palindrome) {
+		                System.out.println(num);
+		                count++;
+		            }
+
+		            num++;
+		        }
+		    }
+		
+
+	}
+
+
