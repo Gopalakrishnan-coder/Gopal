@@ -1,0 +1,34 @@
+package Day5;
+import java.util.Scanner;
+public class Day51034 {
+	    public static boolean isLucky(int num) {
+	        while (num > 0) {
+	            int digit = num % 10;
+	            if (digit != 4 && digit != 7) {
+	                return false;
+	            }
+	            num /= 10;
+	        }
+	        return true;
+	    }
+
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	        int rollNumber = sc.nextInt();
+
+	        boolean isAlmostLucky = false;
+
+	        for (int i = 1; i <= rollNumber; i++) {
+	            if (isLucky(i) && rollNumber % i == 0) {
+	                isAlmostLucky = true;
+	                break;
+	            }
+	        }
+
+	        if (isAlmostLucky) {
+	            System.out.println("YES");
+	        } else {
+	            System.out.println("NO");
+	        }
+	    }
+	}
