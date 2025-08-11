@@ -1,0 +1,21 @@
+package Day5;
+import java.util.Scanner;
+public class Day5ym1058 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        boolean[] seen = new boolean[1001];
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            int note = scanner.nextInt();
+            if (!seen[note]) {
+                seen[note] = true;
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
