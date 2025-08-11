@@ -1,0 +1,30 @@
+package Day5;
+import java.util.Scanner;
+class Day5ym1039 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int n = sc.nextInt();
+
+        int alaricPower[] = {x, n};
+        while (alaricPower[1] != 0) {
+            int temp = alaricPower[1];
+            alaricPower[1] = alaricPower[0] % alaricPower[1];
+            alaricPower[0] = temp;
+        }
+
+        int seraphinaPower[] = {y, n};
+        while (seraphinaPower[1] != 0) {
+            int temp = seraphinaPower[1];
+            seraphinaPower[1] = seraphinaPower[0] % seraphinaPower[1];
+            seraphinaPower[0] = temp;
+        }
+
+        if (alaricPower[0] >= seraphinaPower[0]) {
+            System.out.println("Alaric unravels the most Mystical Scrolls in the Grand Library!");
+        } else {
+            System.out.println("Seraphina unravels the most Mystical Scrolls in the Grand Library!");
+        }
+    }
+}
