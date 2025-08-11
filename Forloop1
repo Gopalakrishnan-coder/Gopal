@@ -1,0 +1,23 @@
+package Day4;
+import java.util.Scanner;
+public class Forloop1 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		int evencount=0;
+		for(int i=x;i<=y;i++)
+		{
+			if(i%2==0)
+			{
+				evencount=evencount+1;
+			}
+			
+			}
+		System.out.println(evencount);
+				
+		}
+
+	}
+
+
