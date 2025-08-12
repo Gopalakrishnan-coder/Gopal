@@ -1,0 +1,16 @@
+package Day7;
+import java.util.Scanner;
+public class ym1071 {
+	public static void main(String[] args) {
+		                                Scanner sc=new Scanner(System.in);
+		                              String a=sc.nextLine();
+		                              String b=sc.nextLine();
+		                              if(a.equals(b)){   
+		                System.out.println("Celestial Confirmation! The strings align.");
+		                              }
+		        else
+		        {
+		            System.out.println("Galactic Discrepancy! The strings do not align.");
+		        }
+		    }
+	}
