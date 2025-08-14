@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class PalindromeQuest {
+    public static void main(String[] args) {
+        Scanner oracle = new Scanner(System.in);
+        String spell = oracle.nextLine();
+        char[] runes = new char[spell.length()];
+        for (int i = 0; i < spell.length(); i++) {
+            runes[i] = spell.charAt(i);
+        }
+        boolean isPalindrome = true;
+        int start = 0;
+        int end = spell.length() - 1;
+        while (start < end) {
+            if (runes[start] != runes[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        if (isPalindrome) {
+            System.out.println("Palindrome Revelation! The string is a palindrome.");
+        } else {
+            System.out.println("Palindromic Mystery Unsolved! The string is not a palindrome.");
+        }
+    }
+} 
